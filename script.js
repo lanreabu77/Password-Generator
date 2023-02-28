@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 var numbers = [1,2,3,4,5,6,7,8,9,0];
 var symbols = ["%", "#", "@", "$", "!", "*", "(", ")", "^", "="];
-var uppercase = ["A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"]; 
+var uppercase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]; 
 var lowercase = ["a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"];
 var passwordlength;
 var uppercaseletters;
@@ -22,7 +22,7 @@ function chosepasswordlength(){
   }else if (length >128){
     prompt ("password length cannot be longer than 128 characters");
     chosepasswordlength;
-  // }else if (length =0){
+  // }else if (numbers!==(passwordlength)){
   //   prompt ("password length must be a number between 8-128 characters");
   //   chosepasswordlength;
   }else{
@@ -61,11 +61,11 @@ function chosesymbols(){
     uppercaseletters = prompt("Would you like to include uppercase letter in your password? (Yes/No)");
     uppercaseletters = uppercaseletters.toLowerCase();
     
-    if (uppercaseletters !== null){
-      prompt ("please enter Yes or No");
+    if (uppercaseletters == ("")){
+      alert ("please enter Yes or No");
       uppercaseselect();
   
-    }else if (uppercaseletters === "yes"){
+    }else if (uppercaseletters = "yes"){
       uppercaseletters = true;
       return uppercaseletters
   
@@ -85,8 +85,8 @@ function chosesymbols(){
     lowercaseletters = prompt("Would you like to include lowercase letter in your password? (Yes/No)");
     lowercaseletters = lowercaseletters.toString();
     
-    if (lowercaseletters !== null){
-      prompt ("please enter Yes or No");
+    if (lowercaseletters !== ("")){
+      alert ("please enter Yes or No");
       lowercaseselect();
   
     }else if (lowercaseletters === "yes"){
@@ -98,7 +98,7 @@ function chosesymbols(){
       return lowercaseletters;
   
     }else {
-      prompt("please enter Yes or No");
+      alert("You may now proceed to the next step");
       lowercaseselect
     }
     return lowercaseletters
