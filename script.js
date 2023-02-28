@@ -17,7 +17,7 @@ function chosepasswordlength(){
   length = prompt("Thank you for coming, please chose password length. (between 8-128 characters):");
 
   if (length <8){
-    prompt("password length cannot be shorter than 8 characters");
+    prompt("password length cannot be shorter than 8 characters, please try again");
     chosepasswordlength();
   }else if (length >128){
     prompt ("password length cannot be longer than 128 characters");
@@ -26,18 +26,21 @@ function chosepasswordlength(){
   //   prompt ("password length must be a number between 8-128 characters");
   //   chosepasswordlength;
   }else{
-    prompt("You may now proceed to the next steps");
+    alert("You may now proceed to the next steps.");
   }
   return length;
 
 }
 
-function chosesymbols(){
-  symbolschar = prompt ("Would you like to include any symbols in your password? (Yes/No)");
-  symbolschar = symbolschar();
 
-  if (""){
+
+function chosesymbols(){
+  symbolschar = prompt("Would you like to include any symbols in your password? (Yes/No)");
+  symbolschar = symbolschar.toString();
+
+  if (symbolschar == ("")){
     prompt("please enter Yes or No");
+    chosesymbols();
 
   }else if (symbolschar === "yes"){
     symbolschar = true;
@@ -47,10 +50,59 @@ function chosesymbols(){
     symbolschar = false;
     return symbolschar;
   }else {
-    prompt("please enter Yes or No");
+    alert("You may now proceed to the next step");
     chosesymbols();
   }
   return symbolschar;
+  }
+
+
+  function uppercaseselect(){
+    uppercaseletters = prompt("Would you like to include uppercase letter in your password? (Yes/No)");
+    uppercaseletters = uppercaseletters.toLowerCase();
+    
+    if (uppercaseletters !== null){
+      prompt ("please enter Yes or No");
+      uppercaseselect();
+  
+    }else if (uppercaseletters === "yes"){
+      uppercaseletters = true;
+      return uppercaseletters
+  
+    }else if (uppercaseletters ==="no"){
+      uppercaseletters = false;
+      return uppercaseletters;
+  
+    }else {
+      alert("You may now proceed to the next step");
+      uppercaseselect
+    }
+    return uppercaseletters
+  
+  }
+
+  function lowercaseselect(){
+    lowercaseletters = prompt("Would you like to include lowercase letter in your password? (Yes/No)");
+    lowercaseletters = lowercaseletters.toString();
+    
+    if (lowercaseletters !== null){
+      prompt ("please enter Yes or No");
+      lowercaseselect();
+  
+    }else if (lowercaseletters === "yes"){
+      lowercaseletterss = true;
+      return lowercaseletters
+  
+    }else if (lowercaseletterss ==="no"){
+      lowercaseletters = false;
+      return lowercaseletters;
+  
+    }else {
+      prompt("please enter Yes or No");
+      lowercaseselect
+    }
+    return lowercaseletters
+  
   }
 
   function generatePassword(){
@@ -58,6 +110,10 @@ function chosesymbols(){
     console.log(length);
     chosesymbols();
     console.log(symbolschar);
+    uppercaseselect();
+    console.log(uppercaseletters);
+    lowercaseselect();
+    console.log(lowercaseselect);
   }
 
 
