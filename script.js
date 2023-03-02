@@ -27,16 +27,6 @@ function chosepasswordlength(){
   }else if (isNaN (length)){
     confirm ("Only numbers must be entered here. Please try again");
     chosepasswordlength();
-
-
-
-  // }else if (passwordlength== "1234567890"){
-  //   confirm("You may now proceed to the next steps");
-  //   return length();
-
-  // }else if (passwordlength!= numbers){
-  //   confirm("Password must contain only numbers");
-  //   // chosepasswordlength();
     
   }else {
     confirm("You may now proceed to the next steps.");
@@ -44,18 +34,10 @@ function chosepasswordlength(){
   return length;
 
 }
-
-
-
+// Symbol Option
 function chosesymbols(){
   symbolschar = prompt("Would you like to include any symbols in your password? (Yes/No)");
   symbolschar = symbolschar.toLowerCase();
-
-
-  // if (symbolschar !== ("Yes or No")){
-  //   confirm ("Please enter Yes or No")
-  //   chosesymbols();
-  // }
   
   if (symbolschar == ("")){
     confirm("please enter Yes or No");
@@ -79,7 +61,7 @@ function chosesymbols(){
   return symbolschar;
   }
 
-
+// Uppercase Option
   function uppercaseselect(){
     uppercaseletters = prompt("Would you like to include uppercase letters in your password? (Yes/No)");
     uppercaseletters = uppercaseletters.toLowerCase();
@@ -103,7 +85,7 @@ function chosesymbols(){
     return uppercaseletters
   
   }
-
+// Lowercase Option
   function lowercaseselect(){
     lowercaseletters = prompt("Would you like to include lowercase letters in your password? (Yes/No)");
     lowercaseletters = lowercaseletters.toLowerCase();
@@ -127,6 +109,7 @@ function chosesymbols(){
     return lowercaseletters;
   
   }
+  // Functions for a forloop
 
   function generatePassword(){
     chosepasswordlength();
